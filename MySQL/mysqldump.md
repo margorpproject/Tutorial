@@ -1,4 +1,4 @@
-mysqldump.exe is a program that allows database inside MySQL to export into sql text.
+mysqldump.exe is a program come with Workbench installation and it allows database of MySQL to export into sql text.
 
 1. open cmd
 
@@ -6,8 +6,7 @@ mysqldump.exe is a program that allows database inside MySQL to export into sql 
 
 > mysqldump --version
 
-If mysqldump is not found, you have to find the location of mysqldump.exe and add the folder path into system path. For Windows, the program should be found in:
-
+If mysqldump is not found, usually you can find it below in Windows. Just change the version number to your installed version.
 > c:\Program Files\MySQL\MySQL Workbench 8.0 CE
 
 If you have no permission to change system path, you can directly call the program as below.
