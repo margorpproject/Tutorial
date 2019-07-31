@@ -103,12 +103,15 @@ Then you can roll back the trasaction by:
 
 ### 21. Looping
 
+change default delimiter from ";" to "$$", so you can use ";" in your code without exit the program.
 > DELIMITER $$
 
+make sure you have deleted the procedure before you create a new one
 > DROP PROCEDURE IF EXISTS test_while_loop$$
 
 > CREATE PROCEDURE test_while_loop()
 
+start your program
 > BEGIN
 
 > DECLARE i INT;
@@ -121,14 +124,16 @@ Then you can roll back the trasaction by:
 
 > WHILE i <= 5 DO
 
-> SET str = CONCAT(str, x, ',');
+> SET str = CONCAT(str, i, ',');
 
-> SET x = x + 1;
+> SET i = i + 1;
 
 > END WHILE;
 
+display the result
 > SELECT str;
 
 > END$$
 
-> DELIMITER;
+change back the delimiter to default character ";"
+> DELIMITER ;
