@@ -143,6 +143,11 @@ change back the delimiter to default character ";"
 
 > ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+If the above commands not solving your problem, you may try
+> ALTER DATABASE dbname CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+> ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 ### 23. Initialize root password
 > USE mysql
 
