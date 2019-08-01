@@ -137,3 +137,22 @@ display the result
 
 change back the delimiter to default character ";"
 > DELIMITER ;
+
+### 22. Change database or table charset to utf8
+> ALTER DATABASE dbname CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+> ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+### 23. Initialize root password
+> USE mysql
+
+> UPDATE user SET authentication_string=PASSWORD("yourpassword") WHERE user="root";
+
+> UPDATE user SET plugin="mysql_native_password" WHERE user="root";
+
+> FLUSH PRIVILEGES;
+
+Don't forget to restart the mysql server from console or terminal
+
+For Linux:
+> sudo service mysql restart
