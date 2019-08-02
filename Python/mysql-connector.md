@@ -75,30 +75,30 @@ To make MySQL to identify the column name with space, enclose the column name by
 
 > try:
 
->   conn = connect(host="localhost", database="<database_name>", user="<user_name>", passwd="<password>")
+> &nbsp;&nbsp;&nbsp;&nbsp;  conn = connect(host="localhost", database="<database_name>", user="<user_name>", passwd="<password>")
 
->   cursor = conn.cursor(prepared=True)
+> &nbsp;&nbsp;&nbsp;&nbsp;  cursor = conn.cursor(prepared=True)
 
->   records = [(<values...>),(<values...>),(<values...>)]
+> &nbsp;&nbsp;&nbsp;&nbsp;  records = [(<values...>),(<values...>),(<values...>)]
 
->   sql = "INSERT INTO <table_name> (<columns...>) VALUES (%s, ..., %s)"
+> &nbsp;&nbsp;&nbsp;&nbsp;  sql = "INSERT INTO <table_name> (<columns...>) VALUES (%s, ..., %s)"
 
->   result = cursor.executemany(sql, records)
+> &nbsp;&nbsp;&nbsp;&nbsp;  result = cursor.executemany(sql, records)
 
->   conn.commit()
+> &nbsp;&nbsp;&nbsp;&nbsp;  conn.commit()
 
->   print("Number of records being imported:", cursor.rowcount)
+> &nbsp;&nbsp;&nbsp;&nbsp;  print("Number of records being imported:", cursor.rowcount)
 
 > except Error as error:
 
->   print("Error occurs: {}".format(error))
+> &nbsp;&nbsp;&nbsp;&nbsp;  print("Error occurs: {}".format(error))
 
 > finally:
 
 > if (conn.is_connected()):
 
->   cursor.close()
+> &nbsp;&nbsp;&nbsp;&nbsp;  cursor.close()
 
->   conn.close()
+> &nbsp;&nbsp;&nbsp;&nbsp;  conn.close()
 
->   print("connection is closed")
+> &nbsp;&nbsp;&nbsp;&nbsp;  print("connection is closed")
