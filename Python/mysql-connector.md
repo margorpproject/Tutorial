@@ -18,7 +18,7 @@ It is very similar to MySQL command prompt.
 
 > for row in cursor:
 
->   print(row)
+> &nbsp;&nbsp;&nbsp;&nbsp;  print(row)
 
 ### 3. List all tables from all databases
 > cursor.execute("USE mysql; SELECT table_name FROM innodb_table_stats;")
