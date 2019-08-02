@@ -68,3 +68,37 @@ if you just have one record to add, you can simply
 To make MySQL to identify the column name with space, enclose the column name by "`".
 > sql = "CREATE TABLE <table-name> (`<column_name>` <column_type>)
 
+> cursor.execute(sql)
+
+### 11. Error handling
+> from mysql.connector import connect, Error, errorcode
+
+> try:
+
+>   conn = connect(host="localhost", database="<database_name>", user="<user_name>", passwd="<password>")
+
+>   cursor = conn.cursor(prepared=True)
+
+>   records = [(<values...>),(<values...>),(<values...>)]
+
+>   sql = "INSERT INTO <table_name> (<columns...>) VALUES (%s, ..., %s)"
+
+>   result = cursor.executemany(sql, records)
+
+>   conn.commit()
+
+>   print("Number of records being imported:", cursor.rowcount)
+
+> except Error as error:
+
+>   print("Error occurs: {}".format(error))
+
+> finally:
+
+> if (conn.is_connected()):
+
+>   cursor.close()
+
+>   conn.close()
+
+>   print("connection is closed")
