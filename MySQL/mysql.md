@@ -6,10 +6,39 @@
 ### 2. Run the command prompt
 > "mysql -u root -p
 
-### 3. Enter password
+Enter password
 > Enter password: ******
 
-### 4. Now you should see the prompt sign is changed into "mysql>"
+Now you should see the prompt sign is changed into "mysql>"
+> mysql>
+
+### 3. Initialize root password if neccessary
+> USE mysql;
+
+> UPDATE user SET authentication_string=PASSWORD("yourpassword") WHERE user="root";
+
+> UPDATE user SET plugin="mysql_native_password" WHERE user="root";
+
+> FLUSH PRIVILEGES;
+
+Don't forget to restart the mysql server from console or terminal
+
+For Linux:
+> sudo service mysql restart
+
+### 4. Change database or table charset to utf8
+> ALTER DATABASE dbname CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+> ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+If the above commands not solving your problem, you may try
+> ALTER DATABASE dbname CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+> ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+The difference between utf8mb4 and utf8 is the first one supports most of 4-byte unicode while utf8 only supports 3 byte unicode. If you still find error in encoding issure for utf8mb4, try the following command:
+
+> SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 ### 5. List databases
 > SHOW DATABASES;
@@ -137,27 +166,3 @@ display the result
 
 change back the delimiter to default character ";"
 > DELIMITER ;
-
-### 22. Change database or table charset to utf8
-> ALTER DATABASE dbname CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-> ALTER TABLE tablename CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-If the above commands not solving your problem, you may try
-> ALTER DATABASE dbname CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-> ALTER TABLE tablename CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-### 23. Initialize root password
-> USE mysql
-
-> UPDATE user SET authentication_string=PASSWORD("yourpassword") WHERE user="root";
-
-> UPDATE user SET plugin="mysql_native_password" WHERE user="root";
-
-> FLUSH PRIVILEGES;
-
-Don't forget to restart the mysql server from console or terminal
-
-For Linux:
-> sudo service mysql restart
