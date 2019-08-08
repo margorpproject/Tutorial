@@ -40,6 +40,20 @@ The difference between utf8mb4 and utf8 is the first one supports most of 4-byte
 
 > SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+For more settings about character set
+> SHOW VARIABLES LIKE '%character%';
+
+Set all environment variables
+> SET GLOBAL character_set_client = utf8mb4
+
+> SET GLOBAL character_set_connection = utf8mb4
+
+> SET GLOBAL character_set_database = utf8mb4
+
+> SET GLOBAL character_set_results = utf8mb4
+
+> SET GLOBAL character_set_server = utf8mb4
+
 ### 5. List databases
 > SHOW DATABASES;
 
