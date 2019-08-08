@@ -43,7 +43,7 @@ The difference between utf8mb4 and utf8 is the first one supports most of 4-byte
 For more settings about character set
 > SHOW VARIABLES LIKE '%character%';
 
-Set all environment variables
+Set all environment variables to utf8mb4
 > SET GLOBAL character_set_client = utf8mb4
 
 > SET GLOBAL character_set_connection = utf8mb4
