@@ -1,5 +1,7 @@
 ### 1. Modify termsrv.dll to enable rdp connection
 
+source: https://www.mysysadmintips.com/windows/clients/545-multiple-rdp-remote-desktop-sessions-in-windows-10
+
 locate C:\Windows\System32\termsrv.dll and open it with a hex editor. (eg. Tiny Hexer, Ultra Edit)
 
 find
