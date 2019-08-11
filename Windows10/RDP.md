@@ -4,6 +4,8 @@ source: https://www.mysysadmintips.com/windows/clients/545-multiple-rdp-remote-d
 
 locate C:\Windows\System32\termsrv.dll and open it with a hex editor. (eg. Tiny Hexer, Ultra Edit)
 
+termsrv.dll version 10.0.18362.53
+
 find
 > 39 81 3C 06 00 00 0F 84 5D 61 01 00
 
