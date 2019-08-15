@@ -21,3 +21,21 @@ To run the application, go to the build folder and see if your <project-name>.dl
 > sudo apt-get update
 
 > sudo apt-get install dotnet-sdk-2.1
+
+### 6. Selenium chrome driver
+
+Install Chrome
+> wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+> sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+Install Chrome Driver
+> sudo apt-get install unzip;
+
+> wget -O /tmp/chromedriver.zip http://chromedriver.googlecode.com/files/chromedriver_linux64_19.0.1068.0.zip && sudo unzip /tmp/chromedriver.zip chromedriver -d /usr/local/bin/;
+
+Check and install shared library
+> sudo ldd libcef.so
+
+If not found, install the library
+> sudo apt-get install libnss3-dev
