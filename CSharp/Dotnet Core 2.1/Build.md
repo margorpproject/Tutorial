@@ -9,4 +9,4 @@ To build the application, go to menu -> build -> build project
 
 ### 4. Run
 To run the application, go to the build folder and see if your <project-name>.dll is found. Open console or terminal, type:
-> dotnet <project-name>.dll
+> dotnet \<project-name\>.dll
